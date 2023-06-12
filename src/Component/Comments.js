@@ -31,6 +31,7 @@ const CommentList = () => {
     if (editMode) {
       const updatedComments = [...comments];
       updatedComments[editIndex].text = newComment;
+      localStorage.setItem("comments", JSON.stringify(comments));
       setComments(updatedComments);
       setEditMode(false);
       setEditIndex(null);
